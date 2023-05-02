@@ -1,0 +1,83 @@
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    hostname: my-rabbit
+    image: rabbitmq:3-management
+    ports:
+    - published: 5672
+      target: 5672
+    - published: 15672
+      target: 15672
+  service1:
+    build:
+      context: D:\RND\NAGP\Microservices\MicroservicesRabbitMqExample\MicroServiceRabbitMqExample
+      dockerfile: Service1/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Service1
+      target: base
+    container_name: Service1
+    depends_on:
+    - rabbitmq
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+    image: service1:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/netcoreapp2.2/Service1.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - target: 80
+    - target: 443
+    tty: true
+    volumes:
+    - D:\RND\NAGP\Microservices\MicroservicesRabbitMqExample\MicroServiceRabbitMqExample\Service1:/app:rw
+    - C:\Users\sumitmaan\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\sumitmaan\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\sumitmaan\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\sumitmaan\.nuget\packages:/root/.nuget/packages:ro
+    - D:\RND\NAGP\Microservices\MicroservicesRabbitMqExample\MicroServiceRabbitMqExample:/src:rw
+  service2:
+    build:
+      context: D:\RND\NAGP\Microservices\MicroservicesRabbitMqExample\MicroServiceRabbitMqExample
+      dockerfile: Service2/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Service2
+      target: base
+    container_name: Service2
+    depends_on:
+    - rabbitmq
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+    image: service2:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/netcoreapp2.2/Service2.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - target: 80
+    - target: 443
+    tty: true
+    volumes:
+    - D:\RND\NAGP\Microservices\MicroservicesRabbitMqExample\MicroServiceRabbitMqExample\Service2:/app:rw
+    - C:\Users\sumitmaan\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\sumitmaan\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\sumitmaan\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\sumitmaan\.nuget\packages:/root/.nuget/packages:ro
+    - D:\RND\NAGP\Microservices\MicroservicesRabbitMqExample\MicroServiceRabbitMqExample:/src:rw
+version: '3.4'

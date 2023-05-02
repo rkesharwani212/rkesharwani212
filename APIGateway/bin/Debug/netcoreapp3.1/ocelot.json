@@ -1,0 +1,190 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/movie",
+      "UpstreamPathTemplate": "/api/movie",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "DownstreamHttpMethod": null,
+      "AddHeadersToRequest": {},
+      "UpstreamHeaderTransform": {},
+      "DownstreamHeaderTransform": {},
+      "AddClaimsToRequest": {},
+      "RouteClaimsRequirement": {},
+      "AddQueriesToRequest": {},
+      "ChangeDownstreamPathTemplate": {},
+      "RequestIdKey": null,
+      "FileCacheOptions": {
+        "TtlSeconds": 0,
+        "Region": null
+      },
+      "RouteIsCaseSensitive": false,
+      "ServiceName": "MOVIESAPI",
+      "ServiceNamespace": null,
+      "DownstreamScheme": "http",
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 2,
+        "DurationOfBreak": 60000,
+        "TimeoutValue": 2000
+      },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin",
+        "Key": null,
+        "Expiry": 0
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": false,
+        "Period": null,
+        "PeriodTimespan": 0.0,
+        "Limit": 0
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": null,
+        "AllowedScopes": []
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false,
+        "UseCookieContainer": false,
+        "UseTracing": false,
+        "UseProxy": true,
+        "MaxConnectionsPerServer": 2147483647
+      },
+      "DownstreamHostAndPorts": [],
+      "UpstreamHost": null,
+      "Key": "movies",
+      "DelegatingHandlers": [],
+      "Priority": 1,
+      "Timeout": 0,
+      "DangerousAcceptAnyServerCertificateValidator": false,
+      "SecurityOptions": {
+        "IPAllowedList": [],
+        "IPBlockedList": []
+      },
+      "DownstreamHttpVersion": null
+    },
+    {
+      "DownstreamPathTemplate": "/api/user",
+      "UpstreamPathTemplate": "/api/user",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "DownstreamHttpMethod": null,
+      "AddHeadersToRequest": {},
+      "UpstreamHeaderTransform": {},
+      "DownstreamHeaderTransform": {},
+      "AddClaimsToRequest": {},
+      "RouteClaimsRequirement": {},
+      "AddQueriesToRequest": {},
+      "ChangeDownstreamPathTemplate": {},
+      "RequestIdKey": null,
+      "FileCacheOptions": {
+        "TtlSeconds": 0,
+        "Region": null
+      },
+      "RouteIsCaseSensitive": false,
+      "ServiceName": "UsersAPI",
+      "ServiceNamespace": null,
+      "DownstreamScheme": "http",
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 2,
+        "DurationOfBreak": 60000,
+        "TimeoutValue": 2000
+      },
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin",
+        "Key": null,
+        "Expiry": 0
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": false,
+        "Period": null,
+        "PeriodTimespan": 0.0,
+        "Limit": 0
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": null,
+        "AllowedScopes": []
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false,
+        "UseCookieContainer": false,
+        "UseTracing": false,
+        "UseProxy": true,
+        "MaxConnectionsPerServer": 2147483647
+      },
+      "DownstreamHostAndPorts": [],
+      "UpstreamHost": null,
+      "Key": "users",
+      "DelegatingHandlers": [],
+      "Priority": 1,
+      "Timeout": 0,
+      "DangerousAcceptAnyServerCertificateValidator": false,
+      "SecurityOptions": {
+        "IPAllowedList": [],
+        "IPBlockedList": []
+      },
+      "DownstreamHttpVersion": null
+    }
+  ],
+  "DynamicRoutes": [],
+  "Aggregates": [
+    {
+      "RouteKeys": [
+        "movies",
+        "users"
+      ],
+      "RouteKeysConfig": null,
+      "UpstreamPathTemplate": "/combine",
+      "UpstreamHost": null,
+      "RouteIsCaseSensitive": false,
+      "Aggregator": "FakeDefinedAggregator",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "Priority": 1
+    }
+  ],
+  "GlobalConfiguration": {
+    "RequestIdKey": "OcRequestId",
+    "ServiceDiscoveryProvider": {
+      "Scheme": null,
+      "Host": "localhost",
+      "Port": 8761,
+      "Type": "Eureka",
+      "Token": null,
+      "ConfigurationKey": null,
+      "PollingInterval": 0,
+      "Namespace": null
+    },
+    "RateLimitOptions": {
+      "ClientIdHeader": "ClientId",
+      "QuotaExceededMessage": null,
+      "RateLimitCounterPrefix": "ocelot",
+      "DisableRateLimitHeaders": false,
+      "HttpStatusCode": 429
+    },
+    "QoSOptions": {
+      "ExceptionsAllowedBeforeBreaking": 0,
+      "DurationOfBreak": 0,
+      "TimeoutValue": 0
+    },
+    "BaseUrl": "http://localhost:62583",
+    "LoadBalancerOptions": {
+      "Type": null,
+      "Key": null,
+      "Expiry": 0
+    },
+    "DownstreamScheme": null,
+    "HttpHandlerOptions": {
+      "AllowAutoRedirect": false,
+      "UseCookieContainer": false,
+      "UseTracing": false,
+      "UseProxy": true,
+      "MaxConnectionsPerServer": 2147483647
+    },
+    "DownstreamHttpVersion": null
+  }
+}

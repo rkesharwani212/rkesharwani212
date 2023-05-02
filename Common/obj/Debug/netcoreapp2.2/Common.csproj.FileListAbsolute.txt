@@ -1,0 +1,9 @@
+D:\RND\NAGP\Microservices\MicroservicesRabbitMqExample\Common\bin\Debug\netcoreapp2.2\Common.deps.json
+D:\RND\NAGP\Microservices\MicroservicesRabbitMqExample\Common\bin\Debug\netcoreapp2.2\Common.dll
+D:\RND\NAGP\Microservices\MicroservicesRabbitMqExample\Common\bin\Debug\netcoreapp2.2\Common.pdb
+D:\RND\NAGP\Microservices\MicroservicesRabbitMqExample\Common\obj\Debug\netcoreapp2.2\Common.AssemblyInfoInputs.cache
+D:\RND\NAGP\Microservices\MicroservicesRabbitMqExample\Common\obj\Debug\netcoreapp2.2\Common.AssemblyInfo.cs
+D:\RND\NAGP\Microservices\MicroservicesRabbitMqExample\Common\obj\Debug\netcoreapp2.2\Common.dll
+D:\RND\NAGP\Microservices\MicroservicesRabbitMqExample\Common\obj\Debug\netcoreapp2.2\Common.pdb
+D:\RND\NAGP\Microservices\MicroservicesRabbitMqExample\Common\obj\Debug\netcoreapp2.2\Common.csprojAssemblyReference.cache
+D:\RND\NAGP\Microservices\MicroservicesRabbitMqExample\Common\obj\Debug\netcoreapp2.2\Common.csproj.CoreCompileInputs.cache

@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "ueeDotbgDeL2k9drRaVjNBrj7p8t2OGAscOg5XC9jIxxYnjS5RzYEjLwlh56+bAmff/MdTwX1sRRBvPxWsy4cQ==",
+  "success": true,
+  "projectFilePath": "D:\\RND\\NAGP\\Microservices\\MicroservicesRabbitMqExample\\Common\\Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sumitmaan\\.nuget\\packages\\microsoft.netcore.app\\2.2.0\\microsoft.netcore.app.2.2.0.nupkg.sha512",
+    "C:\\Users\\sumitmaan\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.2.0\\microsoft.netcore.dotnetapphost.2.2.0.nupkg.sha512",
+    "C:\\Users\\sumitmaan\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.2.0\\microsoft.netcore.dotnethostpolicy.2.2.0.nupkg.sha512",
+    "C:\\Users\\sumitmaan\\.nuget\\packages\\microsoft.netcore.dotnethostresolver\\2.2.0\\microsoft.netcore.dotnethostresolver.2.2.0.nupkg.sha512",
+    "C:\\Users\\sumitmaan\\.nuget\\packages\\microsoft.netcore.platforms\\2.2.0\\microsoft.netcore.platforms.2.2.0.nupkg.sha512",
+    "C:\\Users\\sumitmaan\\.nuget\\packages\\microsoft.netcore.targets\\2.0.0\\microsoft.netcore.targets.2.0.0.nupkg.sha512",
+    "C:\\Users\\sumitmaan\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

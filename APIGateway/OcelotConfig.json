@@ -1,0 +1,51 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/movie",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/movie",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "movies",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "52737"
+        }
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/user",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/user",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "users",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "51657"
+        }
+      ]
+    }
+  ],
+  "Aggregates": [
+    {
+      "RouteKeys": [
+        "movies",
+        "users"
+      ],
+      "UpstreamPathTemplate": "/combine",
+      "Aggregator": "FakeDefinedAggregator"
+    }
+  ],
+  "GlobalConfiguration": {
+    "RequestIdKey": "OcRequestId",
+    "AdministrationPath": "/administration",
+    "UseServiceDiscovery": true,
+    "ServiceDiscoveryProvider": {
+      "Type": "Eureka",
+      "Host": "localhost",
+      "Port": "8761"
+    },
+    "BaseUrl": "http://localhost:62583"
+  }
+}
